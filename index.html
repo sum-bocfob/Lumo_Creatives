@@ -29,32 +29,51 @@
         <meta property="og:image" content="" />
         <meta property="og:locale" content="ja_JP" />
 
-        <!-- OGP Facebook -->
-        <meta property="fb:app_id" content="1234567890" />
-
-        <!-- OGP X (Twitter) -->
-        <meta name="x:card" content="summary_large_image" />
-        <meta name="x:site" content="@your_x_handle" />
-        <meta name="x:creator" content="@your_x_handle" />
-        <meta name="x:title" content="私の素敵なウェブサイト" />
-        <meta name="x:description" content="最新情報をチェックしましょう。" />
-        <meta name="x:image" content="https://example.com/x-image.jpg" />
-
         <!-- Import Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
-
+        <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&family=Marcellus&family=Prata&display=swap" rel="stylesheet" />
         <!-- Import CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css" />
-        <link rel="stylesheet" href="./style.css" />
-
-        <!-- Import JS/jQuery Library -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
+        <!-- * Hero動画 ======================== -->
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><video src="img/52301_640x360.mp4" autoplay muted loop playsinline></video></div>
+                <div class="swiper-slide"><video src="img/887_640x360.mov" autoplay muted loop playsinline></video></div>
+                <div class="swiper-slide"><video src="img/57392_640x360.mov" autoplay muted loop playsinline></video></div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
         <!-- *ヘッダー================== -->
-        <header class="header"></header>
+        <header class="header">
+            <h1 class="header__logo">
+                <a href="#" class="header__logo-link">
+                    <img src="favicon.svg" alt="" class="header__logo-img" />
+                    <span class="header__logo-text">Lumo Creatives</span>
+                </a>
+            </h1>
+            <nav class="header__gnav">
+                <ul class="header__list">
+                    <li class="header__item"><a href="#" class="header__link header__link--active u-upper-case">Top</a></li>
+                    <li class="header__item"><a href="#" class="header__link u-upper-case">About Us</a></li>
+                    <li class="header__item"><a href="#" class="header__link u-upper-case">Works</a></li>
+                    <li class="header__item"><a href="#" class="header__link u-upper-case">Services</a></li>
+                    <li class="header__item"><a href="#" class="header__link u-upper-case">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
         <main class="main"></main>
 
@@ -62,6 +81,8 @@
         <footer class="footer"></footer>
 
         <!-- Import JS -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="./js/main.js"></script>
     </body>
 </html>

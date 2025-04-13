@@ -1,0 +1,94 @@
+@charset "UTF-8";
+body {
+  font-size: 1rem;
+  font-family: BIZ UDPMincho, 游明朝, YuMincho, Hiragino Mincho ProN W3, ヒラギノ明朝 ProN W3, Hiragino Mincho ProN, HG明朝E, ＭＳ Ｐ明朝, ＭＳ 明朝, serif;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  font-weight: normal;
+  color: #111111;
+  background-image: url("img/tex_bg.png");
+  background-repeat: repeat;
+  background-size: 500px 500px;
+  background-position: left top;
+}
+
+/*  ==============================
+    * ヒーロー動画
+    ============================== */
+.swiper {
+  width: 100%;
+  height: 100vh;
+}
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.swiper-slide::before {
+  content: "";
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.5) 50%);
+  background-size: 4px 4px;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+.swiper-slide video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/*  ==============================
+* ヘッダー
+============================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+.header__logo-link {
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.header__logo-link:hover {
+  opacity: 0.6;
+}
+.header__logo-img {
+  width: 40px;
+  height: 40px;
+}
+.header__logo-text {
+  font-size: 2rem;
+  color: #111111;
+}
+.header__list {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+.header__link {
+  transition-duration: 0.3s;
+}
+.header__link:hover {
+  opacity: 0.8;
+}
+.header__link--active {
+  color: #775800;
+}/*# sourceMappingURL=style.css.map */

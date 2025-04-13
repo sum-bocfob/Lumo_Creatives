@@ -1,0 +1,107 @@
+$c_body: #111111;
+$c_gray: #9f9f9f;
+$c_accent: #c39000;
+$g_line: linear-gradient(to right, rgb(33, 33, 33), rgb(42, 42, 42, 0));
+$g_line_rev: linear-gradient(to left, rgb(33, 33, 33), rgb(42, 42, 42, 0));
+
+$ff_sans_serif: #{"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif};
+$ff_serif: #{"游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif};
+
+$fs_body_PC: "body_PC";
+$fs_body_SP: "body_SP";
+$fs_headingL_PC: "headingL_PC";
+$fs_headingL_SP: "headingL_SP";
+$fs_headingM_PC: "headingM_PC";
+$fs_headingM_SP: "headingM_SP";
+$fs_header: "header";
+$fs_form_PC: "form_PC";
+$fs_form_SP: "form_SP";
+
+$fontStyles: (
+    "body_PC": (
+        "ff": #{"BIZ UDPMincho",
+        #{$ff_serif}},
+        "fz": 16,
+        "lh": 1.8,
+        "lts": 0.05,
+        "fw": normal,
+    ),
+    "body_SP": (
+        "ff": #{"BIZ UDPMincho",
+        #{$ff_serif}},
+        "fz": 14,
+        "lh": 1.8,
+        "lts": 0.05,
+        "fw": normal,
+    ),
+    "headingL_PC": (
+        "ff": #{"Prata",
+        #{$ff_serif}},
+        "fz": 48,
+        "lh": 1,
+        "lts": 0.1,
+        "fw": normal,
+    ),
+    "headingL_SP": (
+        "ff": #{"BIZ UDPMincho",
+        #{$ff_serif}},
+        "fz": 32,
+        "lh": 1,
+        "lts": 0.1,
+        "fw": normal,
+    ),
+    "headingM_PC": (
+        "ff": #{"Marcellus",
+        #{$ff_serif}},
+        "fz": 24,
+        "lh": 1,
+        "lts": 0.05,
+        "fw": normal,
+    ),
+    "headingM_SP": (
+        "ff": #{"Marcellus",
+        #{$ff_serif}},
+        "fz": 16,
+        "lh": 1,
+        "lts": 0.05,
+        "fw": normal,
+    ),
+    "header": (
+        "ff": #{"Marcellus",
+        #{$ff_serif}},
+        "fz": 16,
+        "lh": 1,
+        "lts": 0.05,
+        "fw": normal,
+    ),
+    "form_PC": (
+        "ff": #{"BIZ UDPMincho",
+        #{$ff_serif}},
+        "fz": 18,
+        "lh": 1,
+        "lts": 0,
+        "fw": normal,
+    ),
+    "form_SP": (
+        "ff": #{"BIZ UDPMincho",
+        #{$ff_serif}},
+        "fz": 16,
+        "lh": 1,
+        "lts": 0,
+        "fw": normal,
+    ),
+);
+
+@mixin setFont($fs) {
+    $fsMap: map-get(
+        $map: $fontStyles,
+        $key: $fs,
+    );
+    font-size: calc(map-get($map: $fsMap, $key: "fz") / 16) * 1rem;
+    font-family: map-get($map: $fsMap, $key: "ff");
+    line-height: map-get($map: $fsMap, $key: "lh");
+    letter-spacing: map-get($map: $fsMap, $key: "lts") * 1em;
+    font-weight: map-get($map: $fsMap, $key: "fw");
+}
+
+$dur_def: 0.3s;
