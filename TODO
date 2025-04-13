@@ -1,8 +1,11 @@
 デスクトップファースト
 Sass
 BEM
+video.js
+swiper
 
 
 Todo:
   ☐ OGP画像
   ☐ headerスクロールで背景無くす
+  ☐ 動画画像軽量化
