@@ -1,0 +1,76 @@
+@use "variables" as *;
+
+/*  ==============================
+* レイアウト
+============================== */
+.containerL {
+    width: 100%;
+    max-width: 1152px;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+.containerS {
+    width: 100%;
+    max-width: 792px;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 120px 0;
+
+    &--top {
+        padding: 240px 0 120px;
+    }
+}
+
+/*  ==============================
+* テキスト
+============================== */
+.heading-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+
+    &--rev {
+        align-items: flex-end;
+
+        .headingL__lead {
+            text-align: right;
+        }
+    }
+
+    .headingL__lead {
+    }
+}
+
+.headingL {
+    @include setFont($fs_headingL_PC);
+    display: flex;
+    align-items: center;
+    gap: 5.7%;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 65.71428571428572%;
+        height: 1px;
+        background-image: $g_line;
+    }
+
+    &--rev {
+        flex-direction: row-reverse;
+
+        &::after {
+            background-image: $g_line_rev;
+        }
+    }
+}
+
+/*  ==============================
+* ユーティリティ
+============================== */
+.u-upper-case {
+    text-transform: uppercase;
+}

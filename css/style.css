@@ -6,10 +6,117 @@ body {
   letter-spacing: 0.05em;
   font-weight: normal;
   color: #111111;
-  background-image: url("img/tex_bg.png");
+  background-image: url("../img/tex_bg.png");
   background-repeat: repeat;
   background-size: 500px 500px;
   background-position: left top;
+  overflow-x: hidden;
+}
+
+/*  ==============================
+* レイアウト
+============================== */
+.containerL {
+  width: 100%;
+  max-width: 1152px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.containerS {
+  width: 100%;
+  max-width: 792px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 120px 0;
+}
+.section--top {
+  padding: 240px 0 120px;
+}
+
+/*  ==============================
+* テキスト
+============================== */
+.heading-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+.heading-wrapper--rev {
+  align-items: flex-end;
+}
+.heading-wrapper--rev .headingL__lead {
+  text-align: right;
+}
+.headingL {
+  font-size: 3rem;
+  font-family: Prata, 游明朝, YuMincho, Hiragino Mincho ProN W3, ヒラギノ明朝 ProN W3, Hiragino Mincho ProN, HG明朝E, ＭＳ Ｐ明朝, ＭＳ 明朝, serif;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 5.7%;
+}
+.headingL::after {
+  content: "";
+  display: block;
+  width: 65.7142857143%;
+  height: 1px;
+  background-image: linear-gradient(to right, rgb(33, 33, 33), rgba(42, 42, 42, 0));
+}
+.headingL--rev {
+  flex-direction: row-reverse;
+}
+.headingL--rev::after {
+  background-image: linear-gradient(to left, rgb(33, 33, 33), rgba(42, 42, 42, 0));
+}
+
+/*  ==============================
+* ユーティリティ
+============================== */
+.u-upper-case {
+  text-transform: uppercase;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px;
+  height: 40px;
+}
+
+.swiper-button-prev {
+  left: 24px;
+}
+
+.swiper-button-next {
+  right: 24px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 50%;
+  border-top: 2px solid #9f9f9f;
+  border-right: 2px solid #9f9f9f;
+}
+
+.swiper-button-prev::after {
+  rotate: -135deg;
+}
+
+.swiper-button-next::after {
+  rotate: 45deg;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #c39000;
 }
 
 /*  ==============================
@@ -18,6 +125,7 @@ body {
 .swiper {
   width: 100%;
   height: 100vh;
+  max-width: 1440px;
 }
 .swiper-slide {
   width: 100%;
@@ -52,9 +160,11 @@ body {
   padding: 32px;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  translate: -50% 0;
   z-index: 500;
   width: 100%;
+  max-width: 1440px;
   background-color: rgba(255, 255, 255, 0.7);
 }
 .header__logo {
@@ -91,4 +201,90 @@ body {
 }
 .header__link--active {
   color: #775800;
+}
+
+/*  ==============================
+* About Us
+============================== */
+.about__texts {
+  margin-top: 120px;
+}
+.about__text:not(:first-of-type) {
+  margin-top: 16px;
+}
+
+/*  ==============================
+* Works
+============================== */
+.works__cat {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  margin-top: 120px;
+}
+.works__cat-item--active {
+  transition-duration: 0.3s;
+}
+.works__cat-item--active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #111111;
+}
+.works__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 7.1428571429%;
+       column-gap: 7.1428571429%;
+  row-gap: 32px;
+  margin-top: 64px;
+}
+.works__item {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 8px;
+}
+.works__item video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+.works__video-wrapper {
+  position: relative;
+}
+.works__video-wrapper.playing::before, .works__video-wrapper.playing::after {
+  opacity: 0;
+}
+.works__video-wrapper::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -25% -50%;
+  z-index: 2;
+  border: 20px solid transparent;
+  border-left: 35px solid rgba(255, 255, 255, 0.7);
+}
+.works__video-wrapper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 2;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+.works__video-wrapper:hover::before {
+  border-left-color: #fff;
+}
+.works__video-wrapper:hover::after {
+  border-color: #fff;
 }/*# sourceMappingURL=style.css.map */

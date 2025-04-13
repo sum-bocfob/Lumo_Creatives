@@ -1,5 +1,7 @@
 @use "variables" as *;
 @use "base";
+@use "common";
+@use "swiper";
 
 /*  ==============================
     * ヒーロー動画
@@ -7,6 +9,7 @@
 .swiper {
     width: 100%;
     height: 100vh;
+    max-width: 1440px;
 
     &-slide {
         width: 100%;
@@ -44,9 +47,11 @@
     padding: 32px;
     position: fixed;
     top: 0;
-    left: 0;
+    left: 50%;
+    translate: -50% 0;
     z-index: 500;
     width: 100%;
+    max-width: 1440px;
     background-color: rgba(255, 255, 255, 0.7);
 
     &__logo {
@@ -88,6 +93,106 @@
         }
         &--active {
             color: darken($c_accent, 15%);
+        }
+    }
+}
+
+/*  ==============================
+* About Us
+============================== */
+.about {
+    &__texts {
+        margin-top: 120px;
+    }
+
+    &__text:not(:first-of-type) {
+        margin-top: 16px;
+    }
+}
+
+/*  ==============================
+* Works
+============================== */
+.works {
+    &__cat {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 64px;
+        margin-top: 120px;
+    }
+
+    &__cat-item--active {
+        transition-duration: $dur_def;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: $c_body;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 7.142857142857143%;
+        row-gap: 32px;
+        margin-top: 64px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 8px;
+
+        video {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+        }
+    }
+
+    &__video-wrapper {
+        position: relative;
+        &.playing::before,
+        &.playing::after {
+            opacity: 0;
+        }
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -25% -50%;
+            z-index: 2;
+            border: 20px solid transparent;
+            border-left: 35px solid rgba(255, 255, 255, 0.7);
+        }
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            z-index: 2;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+        }
+
+        &:hover {
+            &::before {
+                border-left-color: #fff;
+            }
+            &::after {
+                border-color: #fff;
+            }
         }
     }
 }

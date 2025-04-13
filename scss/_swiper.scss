@@ -1,0 +1,35 @@
+@use "variables" as *;
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: 40px;
+    height: 40px;
+}
+
+.swiper-button-prev {
+    left: 24px;
+}
+.swiper-button-next {
+    right: 24px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 50%;
+    border-top: 2px solid $c_gray;
+    border-right: 2px solid $c_gray;
+}
+
+.swiper-button-prev::after {
+    rotate: -135deg;
+}
+.swiper-button-next::after {
+    rotate: 45deg;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: $c_accent;
+}
