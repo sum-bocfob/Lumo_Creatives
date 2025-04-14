@@ -8,6 +8,10 @@ body {
     background-size: 500px 500px;
     background-position: left top;
     overflow-x: hidden;
+
+    @include media {
+        @include setFont($fs_body_SP);
+    }
 }
 
 input,

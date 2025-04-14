@@ -12,6 +12,15 @@ body {
   background-position: left top;
   overflow-x: hidden;
 }
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 0.875rem;
+    font-family: BIZ UDPMincho, 游明朝, YuMincho, Hiragino Mincho ProN W3, ヒラギノ明朝 ProN W3, Hiragino Mincho ProN, HG明朝E, ＭＳ Ｐ明朝, ＭＳ 明朝, serif;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    font-weight: normal;
+  }
+}
 
 input,
 textarea {
@@ -235,6 +244,18 @@ textarea {
   width: 100%;
   max-width: 1440px;
   background-color: rgba(255, 255, 255, 0.7);
+  transition-duration: 0.3s;
+}
+.header.js-open-menu {
+  background-color: transparent;
+}
+.header.scrolled {
+  background-color: transparent;
+}
+@media screen and (max-width: 768px) {
+  .header {
+    height: 64px;
+  }
 }
 .header__logo {
   display: flex;
@@ -253,14 +274,52 @@ textarea {
   width: 40px;
   height: 40px;
 }
+@media screen and (max-width: 768px) {
+  .header__logo-img {
+    width: 32px;
+    height: 32px;
+  }
+}
 .header__logo-text {
   font-size: 2rem;
   color: #111111;
 }
+@media screen and (max-width: 768px) {
+  .header__logo-text {
+    display: none;
+  }
+}
+.header__gnav.js-open-menu {
+  opacity: 1;
+  pointer-events: all;
+}
+@media screen and (max-width: 768px) {
+  .header__gnav {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    transition-duration: 0.3s;
+    pointer-events: none;
+  }
+}
 .header__list {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   gap: 80px;
+}
+@media screen and (max-width: 768px) {
+  .header__list {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .header__link {
   transition-duration: 0.3s;
@@ -270,6 +329,65 @@ textarea {
 }
 .header__link--active {
   color: #775800;
+  font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  .header__link {
+    padding: 16px;
+  }
+}
+
+/*  ==============================
+* ハンバーガーメニュー
+============================== */
+.hamburger {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  z-index: 1500;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+.hamburger.js-open-menu span:nth-child(1) {
+  top: 14px;
+  width: 20px;
+  height: 2px;
+  rotate: -45deg;
+  border-radius: 8px;
+}
+.hamburger.js-open-menu span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.js-open-menu span:nth-child(3) {
+  top: 14px;
+  width: 20px;
+  height: 2px;
+  rotate: 45deg;
+  border-radius: 8px;
+}
+.hamburger span {
+  width: 4px;
+  height: 4px;
+  display: block;
+  background-color: #111111;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  translate: -50% 0;
+  transition-duration: 0.3s;
+}
+.hamburger span:nth-child(2) {
+  top: 14px;
+}
+.hamburger span:nth-child(3) {
+  top: 22px;
 }
 
 /*  ==============================
@@ -508,4 +626,52 @@ textarea {
   display: flex;
   justify-content: center;
   margin-top: 72px;
+}
+
+/*  ==============================
+* フッター
+============================== */
+.footer {
+  padding: 80px 0;
+  text-align: center;
+  color: #c39000;
+}
+
+/*  ==============================
+* ページトップへ戻るボタン
+============================== */
+.page-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  writing-mode: vertical-lr;
+  text-align: center;
+  font-size: 1rem;
+  font-family: Marcellus, 游明朝, YuMincho, Hiragino Mincho ProN W3, ヒラギノ明朝 ProN W3, Hiragino Mincho ProN, HG明朝E, ＭＳ Ｐ明朝, ＭＳ 明朝, serif;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  font-weight: normal;
+  padding: 20px 36px 20px 12px;
+}
+.page-top-btn::before, .page-top-btn::after {
+  content: "";
+  display: block;
+  background-color: #111111;
+  position: absolute;
+}
+.page-top-btn::before {
+  width: 1px;
+  height: 80px;
+  top: 50%;
+  right: 18px;
+  translate: 0 -50%;
+}
+.page-top-btn::after {
+  width: 1px;
+  height: 16px;
+  top: calc(50% - 40px);
+  right: 18px;
+  transform-origin: 0 0;
+  rotate: -25deg;
 }/*# sourceMappingURL=style.css.map */

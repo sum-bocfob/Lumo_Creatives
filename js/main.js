@@ -102,4 +102,97 @@ $(function () {
             btn.addClass("works__cat-item--active");
         },400);
     });
+
+    // *ハンバーガーメニュー
+    const ham = $(".hamburger");
+    const gnav = $(".header__gnav");
+    const header = $(".header");
+    ham.on("click", function() {
+        $(this).toggleClass("js-open-menu");
+        gnav.toggleClass("js-open-menu");
+        header.toggleClass("js-open-menu");
+    });
+    gnav.on("click", function() {
+        $(this).removeClass("js-open-menu");
+        ham.removeClass("js-open-menu");
+        header.removeClass("js-open-menu");
+    });
+
+    // *ナビゲーションアクティブ
+    let area_tops = [];
+    function PositionCheck() {
+        $(".area").each(function(i) {
+            area_tops[i] = $(this).offset().top;
+        })
+    }
+    function SetNavActive() {
+        win_top = $(window).scrollTop();
+        header_links = $(".header__link");
+        header_links.removeClass("header__link--active");
+
+        let idx = 0;
+        for (t of area_tops) {
+            if (idx === area_tops.length - 1) {
+                $(header_links[idx]).addClass("header__link--active");
+                return;
+            }
+            if (win_top >= t && win_top <= area_tops[idx + 1]) {
+                $(header_links[idx]).addClass("header__link--active");
+                return;
+            }
+            idx++;
+        }
+    }
+
+    // * ページ内スクロール
+    // ヘッダーの高さ取得
+    header_height = header.outerHeight();
+    $("a[href^='#']").on("click", function() {
+        const href = $(this).attr("href");
+        target = $(href === "#" || href === "" ? "html" : href);
+        pos = target.offset().top;
+        $("html, body").animate({
+            scrollTop: pos - header_height - 32,
+        });
+    });
+
+    // *スクロール
+    const top_btn = $(".page-top-btn");
+    $(window).on("scroll", function() {
+        // *一定量スクロールでヘッダーの背景透過
+        if ($(this).scrollTop() > window.outerHeight) {
+            header.addClass("scrolled");
+        } else {
+            header.removeClass("scrolled");
+        }
+
+        // *一定量スクロールでトップへ戻るボタン表示
+        if ($(this).scrollTop() > $(document).height() / 2) {
+            top_btn.fadeIn();
+        } else {
+            top_btn.fadeOut();
+        }
+
+        // *ナビゲーションアクティブ
+        PositionCheck();
+        SetNavActive();
+    });
+
+    // *トップへ戻るボタン
+    top_btn.on("click", function() {
+        $("html, body").animate({
+            scrollTop: 0,
+        });
+    });
+
+    $(window).on("load", function() {
+        // *ナビゲーションアクティブ
+        PositionCheck();
+        SetNavActive();
+    });
+    $(window).on("resize", function() {
+        // *ナビゲーションアクティブ
+        PositionCheck();
+        SetNavActive();
+    });
 });
