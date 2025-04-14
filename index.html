@@ -116,13 +116,13 @@
 
                     <!-- * タブ ======================== -->
                     <ul class="works__cat">
-                        <li class="works__cat-item works__cat-item--active u-upper-case"><button class="works__cat-btn">Movies</button></li>
-                        <li class="works__cat-item u-upper-case"><button class="works__cat-btn">Pictures</button></li>
-                        <li class="works__cat-item u-upper-case"><button class="works__cat-btn">Designs</button></li>
+                        <li class="works__cat-item works__cat-item--movies works__cat-item--active u-upper-case"><button class="works__cat-btn">Movies</button></li>
+                        <li class="works__cat-item works__cat-item--pics u-upper-case"><button class="works__cat-btn">Pictures</button></li>
+                        <li class="works__cat-item works__cat-item--designs u-upper-case"><button class="works__cat-btn">Designs</button></li>
                     </ul>
 
                     <!-- * Movieアイテム ======================== -->
-                    <ul class="works__list" id="movie-list">
+                    <ul class="works__list works__list--movie" id="movie-list">
                         <li class="works__item">
                             <h3 class="works__item-title">Movie1</h3>
                             <div class="works__video-wrapper">
@@ -182,7 +182,7 @@
                     </ul>
 
                     <!-- * Picturesアイテム ======================== -->
-                    <div class="works__pic-list">
+                    <div class="works__list works__list--pic">
                         <div class="grid-sizer"></div>
                         <div class="works__pic-item">
                             <img src="img/thumb_movie.jpg" alt="" />
@@ -218,15 +218,18 @@
                     <!-- /.works__pic-list -->
 
                     <!-- * Designsアイテム -->
-                    <ul class="works__design-list">
+                    <ul class="works__list works__list--design">
                         <li class="works__design-item">
-                            <a href="#" target="_blank"><img src="img/design.jpg" alt="" />○○様</a>
+                            <a href="#" target="_blank"><img src="img/design.jpg" alt="" /></a>
+                            ○○様
                         </li>
                         <li class="works__design-item">
-                            <a href="#" target="_blank"><img src="img/design02.jpg" alt="" />○○様</a>
+                            <a href="#" target="_blank"><img src="img/design02.jpg" alt="" /></a>
+                            ○○様
                         </li>
                         <li class="works__design-item">
-                            <a href="#" target="_blank"><img src="img/design03.jpg" alt="" />○○様</a>
+                            <a href="#" target="_blank"><img src="img/design03.jpg" alt="" /></a>
+                            ○○様
                         </li>
                     </ul>
                 </section>

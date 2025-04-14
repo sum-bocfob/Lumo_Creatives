@@ -131,8 +131,6 @@
         }
     }
 
-    /*
-    * Movie ============================== */
     &__list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -141,6 +139,8 @@
         margin-top: 64px;
     }
 
+    /*
+    * Movie ============================== */
     &__item {
         display: flex;
         flex-direction: column-reverse;
@@ -156,8 +156,8 @@
 
     /*
     * Pictures ============================== */
-    &__pic-list {
-        margin: 0 auto;
+    &__list--pic {
+        margin: inherit auto;
     }
 
     &__pic-item {
@@ -183,7 +183,7 @@
 
     /*
     * Designs ============================== */
-    &__design-list {
+    &__list--design {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -191,7 +191,7 @@
     }
 
     &__design-item {
-        // text-align: center;
+        text-align: center;
         transition-duration: $dur_def;
         // overflow: hidden;
         position: relative;
@@ -208,6 +208,7 @@
             font-weight: 900;
             opacity: 0;
             transition-duration: $dur_def;
+            mix-blend-mode: difference;
         }
         &:hover {
             opacity: 0.8;
@@ -217,8 +218,13 @@
             }
 
             img {
-                scale: 1.02;
+                scale: 1.01;
             }
+        }
+
+        a {
+            display: block;
+            overflow: hidden;
         }
 
         img {

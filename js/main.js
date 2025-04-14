@@ -44,7 +44,7 @@ document.querySelectorAll(".video-js").forEach((e)=> {
 })
 
 // * Viewer.js
-const viewer = new Viewer(document.querySelector(".works__pic-list"), {
+const viewer = new Viewer(document.querySelector(".works__list--pic"), {
     toolbar: {
         zoomIn: 3,
         zoomOut: 3,
@@ -66,15 +66,40 @@ const viewer = new Viewer(document.querySelector(".works__pic-list"), {
 
 $(function () {
     // *Masonry
-    var list = $('.works__pic-list');   //コンテナとなる要素を指定
+    var list = $('.works__list--pic');   //コンテナとなる要素を指定
 
     //Masonryの関数↓
     list.masonry({              //オプション指定箇所
         itemSelector: '.works__pic-item',   //コンテンツを指定
-        // columnWidth: 205,           //カラム幅を設定
-        // fitWidth: true,             //コンテンツ数に合わせ親の幅を自動調整
-        columnWidth: '.grid-sizer',
-        gutter: 8,
-        percentPosition: true
+        columnWidth: 205,           //カラム幅を設定
+        fitWidth: true,             //コンテンツ数に合わせ親の幅を自動調整
+        // columnWidth: '.grid-sizer',
+        // gutter: 8,
+        // percentPosition: true
+    });
+
+    // * Worksタブ切り替え
+    const tab_btns = $(".works__cat-item");
+    const lists = [$(".works__list--movie"),$(".works__list--pic"),$(".works__list--design")];
+    lists.forEach((l, idx) => {
+        if (idx !== 0) {
+            l.hide();
+        }
+    });
+    
+    tab_btns.on("click", function () {
+        tab_btns.each(function() {
+            $(this).removeClass("works__cat-item--active");
+        })
+        
+        const btn = $(this);
+
+        lists.forEach((l) => {
+            l.slideUp("0.2s");
+        })
+        setTimeout(function() {
+            lists[tab_btns.index(btn)].slideDown("0.2s");
+            btn.addClass("works__cat-item--active");
+        },300);
     });
 });

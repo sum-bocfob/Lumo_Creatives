@@ -3,9 +3,14 @@ Sass
 BEM
 video.js
 swiper
+Masonry.js
+viewer.js
+font awesome
+
 
 
 Todo:
   ☐ OGP画像
   ☐ headerスクロールで背景無くす
   ☐ 動画画像軽量化
+  ☐ Masonry中央寄せ
