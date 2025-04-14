@@ -234,3 +234,80 @@
         }
     }
 }
+
+/*  ==============================
+* Services
+============================== */
+.services {
+    &__list {
+        margin-top: 120px;
+        text-align: center;
+    }
+
+    &__item {
+        width: 520px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+
+        &:not(:first-child) {
+            margin-top: -80px;
+        }
+
+        &:nth-child(even) {
+            margin-left: auto;
+        }
+    }
+
+    &__title {
+        @include setFont($fs_headingM_PC);
+        position: relative;
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            translate: -50% -50%;
+        }
+        &::before {
+            border: 1px solid rgba($color: $c_accent, $alpha: 0.8);
+            top: calc(50% - 4px);
+            left: calc(50% - 4px);
+        }
+        &::after {
+            background-color: rgba($c_accent, 0.2);
+            top: calc(50% + 4px);
+            left: calc(50% + 4px);
+        }
+    }
+
+    &__contents {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        width: 100%;
+    }
+
+    &__price {
+        &-list {
+            width: 100%;
+        }
+
+        &-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid $c_gray;
+            padding: 8px 0;
+        }
+
+        &-title {
+            font-weight: normal;
+        }
+    }
+}

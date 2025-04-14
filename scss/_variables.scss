@@ -13,6 +13,8 @@ $fs_headingL_PC: "headingL_PC";
 $fs_headingL_SP: "headingL_SP";
 $fs_headingM_PC: "headingM_PC";
 $fs_headingM_SP: "headingM_SP";
+$fs_headingS_PC: "headingS_PC";
+$fs_headingS_SP: "headingS_SP";
 $fs_header: "header";
 $fs_form_PC: "form_PC";
 $fs_form_SP: "form_SP";
@@ -51,14 +53,30 @@ $fontStyles: (
         "fw": normal,
     ),
     "headingM_PC": (
-        "ff": #{"Marcellus",
+        "ff": #{"BIZ UDPMincho",
+        #{$ff_serif}},
+        "fz": 32,
+        "lh": 1.8,
+        "lts": 0.05,
+        "fw": normal,
+    ),
+    "headingM_SP": (
+        "ff": #{"BIZ UDPMincho",
+        #{$ff_serif}},
+        "fz": 24,
+        "lh": 1.8,
+        "lts": 0.05,
+        "fw": normal,
+    ),
+    "headingS_PC": (
+        "ff": #{"Sarcellus",
         #{$ff_serif}},
         "fz": 24,
         "lh": 1,
         "lts": 0.05,
         "fw": normal,
     ),
-    "headingM_SP": (
+    "headingS_SP": (
         "ff": #{"Marcellus",
         #{$ff_serif}},
         "fz": 16,

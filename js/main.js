@@ -100,6 +100,6 @@ $(function () {
         setTimeout(function() {
             lists[tab_btns.index(btn)].slideDown("0.2s");
             btn.addClass("works__cat-item--active");
-        },300);
+        },400);
     });
 });
