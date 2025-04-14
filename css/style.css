@@ -13,6 +13,44 @@ body {
   overflow-x: hidden;
 }
 
+input,
+textarea {
+  border: 1px solid #9f9f9f;
+  padding: 16px;
+  color: #111111;
+  outline: none;
+  font-size: 1.125rem;
+  font-family: BIZ UDPMincho, 游明朝, YuMincho, Hiragino Mincho ProN W3, ヒラギノ明朝 ProN W3, Hiragino Mincho ProN, HG明朝E, ＭＳ Ｐ明朝, ＭＳ 明朝, serif;
+  line-height: 1;
+  letter-spacing: 0em;
+  font-weight: normal;
+}
+@media screen and (max-width: 768px) {
+  input,
+  textarea {
+    font-size: 1rem;
+    font-family: BIZ UDPMincho, 游明朝, YuMincho, Hiragino Mincho ProN W3, ヒラギノ明朝 ProN W3, Hiragino Mincho ProN, HG明朝E, ＭＳ Ｐ明朝, ＭＳ 明朝, serif;
+    line-height: 1;
+    letter-spacing: 0em;
+    font-weight: normal;
+  }
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #9f9f9f;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #9f9f9f;
+}
+input:focus,
+textarea:focus {
+  border-color: #111111;
+}
+
+textarea {
+  resize: none;
+}
+
 /*  ==============================
 * レイアウト
 ============================== */
@@ -36,6 +74,9 @@ body {
 .section--top {
   padding: 240px 0 120px;
 }
+.section.contact {
+  padding: 240px 0;
+}
 
 /*  ==============================
 * テキスト
@@ -52,6 +93,7 @@ body {
 .heading-wrapper--rev .headingL__lead {
   text-align: right;
 }
+
 .headingL {
   font-size: 3rem;
   font-family: Prata, 游明朝, YuMincho, Hiragino Mincho ProN W3, ヒラギノ明朝 ProN W3, Hiragino Mincho ProN, HG明朝E, ＭＳ Ｐ明朝, ＭＳ 明朝, serif;
@@ -75,6 +117,32 @@ body {
 }
 .headingL--rev::after {
   background-image: linear-gradient(to left, rgb(33, 33, 33), rgba(42, 42, 42, 0));
+}
+.headingL--center {
+  display: block;
+  text-align: center;
+}
+.headingL--center::after {
+  display: none;
+}
+
+/*  ==============================
+* ボタン
+============================== */
+.btn {
+  display: grid;
+  place-content: center;
+  border: 1px solid #9f9f9f;
+  width: 74.6666666667%;
+  max-width: 280px;
+  line-height: 1;
+  padding: 16px 0;
+  box-shadow: 0 6px 0 0 #9f9f9f;
+  transition-duration: 0.3s;
+}
+.btn:hover {
+  box-shadow: none;
+  translate: 0 6px;
 }
 
 /*  ==============================
@@ -391,4 +459,53 @@ body {
 }
 .services__price-title {
   font-weight: normal;
+}
+
+/*  ==============================
+    * Contact
+    ============================== */
+.contact .form__area-wrapper {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.contact .form input,
+.contact .form textarea {
+  width: 100%;
+}
+.contact .form textarea {
+  height: 400px;
+}
+.contact .form input:not(:-moz-placeholder-shown) + label, .contact .form textarea:not(:-moz-placeholder-shown) + label {
+  opacity: 1;
+}
+.contact .form input:not(:placeholder-shown) + label,
+.contact .form textarea:not(:placeholder-shown) + label {
+  opacity: 1;
+}
+.contact .form__area {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+.contact .form__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 0.75rem;
+  font-family: BIZ UDPMincho, 游明朝, YuMincho, Hiragino Mincho ProN W3, ヒラギノ明朝 ProN W3, Hiragino Mincho ProN, HG明朝E, ＭＳ Ｐ明朝, ＭＳ 明朝, serif;
+  line-height: 1;
+  letter-spacing: 0em;
+  font-weight: normal;
+  translate: 32px -50%;
+  color: #9f9f9f;
+  opacity: 0;
+  padding: 0 8px;
+  background-image: url("../img/tex_bg.png");
+}
+.contact .form__btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 72px;
 }/*# sourceMappingURL=style.css.map */

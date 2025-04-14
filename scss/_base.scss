@@ -9,3 +9,27 @@ body {
     background-position: left top;
     overflow-x: hidden;
 }
+
+input,
+textarea {
+    border: 1px solid $c_gray;
+    padding: 16px;
+    color: $c_body;
+    outline: none;
+    @include setFont($fs_form_PC);
+    @include media {
+        @include setFont($fs_form_SP);
+    }
+
+    &::placeholder {
+        color: $c_gray;
+    }
+
+    &:focus {
+        border-color: $c_body;
+    }
+}
+
+textarea {
+    resize: none;
+}

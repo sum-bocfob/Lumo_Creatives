@@ -18,6 +18,7 @@ $fs_headingS_SP: "headingS_SP";
 $fs_header: "header";
 $fs_form_PC: "form_PC";
 $fs_form_SP: "form_SP";
+$fs_small: "small";
 
 $fontStyles: (
     "body_PC": (
@@ -108,6 +109,14 @@ $fontStyles: (
         "lts": 0,
         "fw": normal,
     ),
+    "small": (
+        "ff": #{"BIZ UDPMincho",
+        #{$ff_serif}},
+        "fz": 12,
+        "lh": 1,
+        "lts": 0,
+        "fw": normal,
+    ),
 );
 
 @mixin setFont($fs) {
@@ -123,3 +132,10 @@ $fontStyles: (
 }
 
 $dur_def: 0.3s;
+
+// メディアクエリ
+@mixin media() {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
