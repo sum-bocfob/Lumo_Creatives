@@ -80,11 +80,26 @@ textarea {
 .section {
   padding: 120px 0;
 }
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 64px 0;
+  }
+}
 .section--top {
   padding: 240px 0 120px;
 }
+@media screen and (max-width: 768px) {
+  .section--top {
+    padding: 64px 0;
+  }
+}
 .section.contact {
   padding: 240px 0;
+}
+@media screen and (max-width: 768px) {
+  .section.contact {
+    padding: 80px 0;
+  }
 }
 
 /*  ==============================
@@ -102,6 +117,11 @@ textarea {
 .heading-wrapper--rev .headingL__lead {
   text-align: right;
 }
+@media screen and (max-width: 768px) {
+  .heading-wrapper--rev .headingL__lead {
+    text-align: center;
+  }
+}
 
 .headingL {
   font-size: 3rem;
@@ -111,15 +131,32 @@ textarea {
   font-weight: normal;
   display: flex;
   align-items: center;
-  gap: 5.7%;
+  gap: 5%;
   width: 100%;
+  word-spacing: 0.5em;
+}
+@media screen and (max-width: 768px) {
+  .headingL {
+    font-size: 2rem;
+    font-family: BIZ UDPMincho, 游明朝, YuMincho, Hiragino Mincho ProN W3, ヒラギノ明朝 ProN W3, Hiragino Mincho ProN, HG明朝E, ＭＳ Ｐ明朝, ＭＳ 明朝, serif;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    font-weight: normal;
+    gap: 0;
+    justify-content: center;
+  }
 }
 .headingL::after {
   content: "";
   display: block;
-  width: 65.7142857143%;
+  width: 60%;
   height: 1px;
   background-image: linear-gradient(to right, rgb(33, 33, 33), rgba(42, 42, 42, 0));
+}
+@media screen and (max-width: 768px) {
+  .headingL::after {
+    display: none;
+  }
 }
 .headingL--rev {
   flex-direction: row-reverse;
@@ -133,6 +170,12 @@ textarea {
 }
 .headingL--center::after {
   display: none;
+}
+@media screen and (max-width: 768px) {
+  .headingL__lead {
+    text-align: center;
+    margin: 0 auto;
+  }
 }
 
 /*  ==============================
@@ -149,9 +192,11 @@ textarea {
   box-shadow: 0 6px 0 0 #9f9f9f;
   transition-duration: 0.3s;
 }
-.btn:hover {
-  box-shadow: none;
-  translate: 0 6px;
+@media (hover: hover) {
+  .btn:hover {
+    box-shadow: none;
+    translate: 0 6px;
+  }
 }
 
 /*  ==============================
@@ -159,6 +204,21 @@ textarea {
 ============================== */
 .u-upper-case {
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+  .u-block-only-SP {
+    display: block;
+  }
+}
+
+.u-inline-only-SP {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .u-inline-only-SP {
+    display: inline;
+  }
 }
 
 .swiper-button-prev,
@@ -252,7 +312,7 @@ textarea {
 .header.scrolled {
   background-color: transparent;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 960px) {
   .header {
     height: 64px;
   }
@@ -260,6 +320,7 @@ textarea {
 .header__logo {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 .header__logo-link {
   transition-duration: 0.3s;
@@ -274,26 +335,29 @@ textarea {
   width: 40px;
   height: 40px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 960px) {
   .header__logo-img {
     width: 32px;
     height: 32px;
   }
 }
 .header__logo-text {
-  font-size: 2rem;
+  font-size: min(2.2222222222vw, 2rem);
   color: #111111;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 960px) {
   .header__logo-text {
     display: none;
   }
+}
+.header__gnav {
+  width: 100%;
 }
 .header__gnav.js-open-menu {
   opacity: 1;
   pointer-events: all;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 960px) {
   .header__gnav {
     background-color: rgba(255, 255, 255, 0.8);
     width: 100%;
@@ -311,10 +375,10 @@ textarea {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
-  gap: 80px;
+  justify-content: flex-end;
+  gap: min(5.5555555556vw, 80px);
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 960px) {
   .header__list {
     flex-direction: column;
     align-items: center;
@@ -331,7 +395,7 @@ textarea {
   color: #775800;
   font-weight: bold;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 960px) {
   .header__link {
     padding: 16px;
   }
@@ -349,7 +413,7 @@ textarea {
   z-index: 1500;
   display: none;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 960px) {
   .hamburger {
     display: block;
   }
@@ -396,6 +460,11 @@ textarea {
 .about__texts {
   margin-top: 120px;
 }
+@media screen and (max-width: 768px) {
+  .about__texts {
+    margin-top: 32px;
+  }
+}
 .about__text:not(:first-of-type) {
   margin-top: 16px;
 }
@@ -417,9 +486,26 @@ textarea {
   justify-content: center;
   gap: 64px;
   margin-top: 120px;
+  font-size: 1.5rem;
+  font-family: Sarcellus, 游明朝, YuMincho, Hiragino Mincho ProN W3, ヒラギノ明朝 ProN W3, Hiragino Mincho ProN, HG明朝E, ＭＳ Ｐ明朝, ＭＳ 明朝, serif;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  font-weight: normal;
+}
+@media screen and (max-width: 768px) {
+  .works__cat {
+    margin-top: 56px;
+    gap: 40px;
+    font-size: 1rem;
+    font-family: Marcellus, 游明朝, YuMincho, Hiragino Mincho ProN W3, ヒラギノ明朝 ProN W3, Hiragino Mincho ProN, HG明朝E, ＭＳ Ｐ明朝, ＭＳ 明朝, serif;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    font-weight: normal;
+  }
 }
 .works__cat-item--active {
   transition-duration: 0.3s;
+  position: relative;
 }
 .works__cat-item--active::after {
   content: "";
@@ -427,6 +513,13 @@ textarea {
   width: 100%;
   height: 1px;
   background-color: #111111;
+  position: absolute;
+  bottom: -8px;
+}
+@media screen and (max-width: 768px) {
+  .works__cat-item--active::after {
+    bottom: -4px;
+  }
 }
 .works__list {
   display: grid;
@@ -436,23 +529,67 @@ textarea {
   row-gap: 32px;
   margin-top: 64px;
 }
+@media screen and (max-width: 768px) {
+  .works__list {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 24px;
+    row-gap: 16px;
+  }
+}
 .works__item {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   gap: 8px;
 }
+@media screen and (max-width: 768px) {
+  .works__item {
+    gap: 2px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .works__item--hideSP {
+    display: none;
+  }
+}
+.works__item--hideSP.js-show {
+  display: flex;
+}
 .works__video-wrapper {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
 }
+.works .movie-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  width: 100%;
+}
 .works__list--pic {
   margin: inherit auto;
 }
 .works__pic-item {
-  width: 16%;
-  margin-bottom: 8px;
+  width: 100%;
+  margin-bottom: 2px;
+}
+@media screen and (min-width: 300px) {
+  .works__pic-item {
+    width: 49.5%;
+  }
+  .gutter-sizer {
+    width: 1%;
+  }
+}
+@media screen and (min-width: 600px) {
+  .works__pic-item {
+    width: 32.666%;
+  }
+}
+@media screen and (min-width: 690px) {
+  .works__pic-item {
+    width: 24.25%;
+  }
 }
 .works__pic-item img {
   width: 100%;
@@ -463,9 +600,6 @@ textarea {
 .works__pic-item img:hover {
   scale: 1.01;
   opacity: 0.8;
-}
-.works .grid-sizer {
-  width: 16%;
 }
 .works__list--design {
   width: 100%;
@@ -518,6 +652,11 @@ textarea {
   margin-top: 120px;
   text-align: center;
 }
+@media screen and (max-width: 1024px) {
+  .services__list {
+    margin-top: 64px;
+  }
+}
 .services__item {
   width: 520px;
   display: flex;
@@ -525,8 +664,24 @@ textarea {
   align-items: center;
   gap: 40px;
 }
+@media screen and (max-width: 1024px) {
+  .services__item {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .services__item {
+    width: 100%;
+  }
+}
 .services__item:not(:first-child) {
   margin-top: -80px;
+}
+@media screen and (max-width: 1024px) {
+  .services__item:not(:first-child) {
+    margin-top: 120px;
+  }
 }
 .services__item:nth-child(even) {
   margin-left: auto;
@@ -565,6 +720,13 @@ textarea {
   gap: 24px;
   width: 100%;
 }
+.services__lead {
+  font-size: 1rem;
+  font-family: BIZ UDPMincho, 游明朝, YuMincho, Hiragino Mincho ProN W3, ヒラギノ明朝 ProN W3, Hiragino Mincho ProN, HG明朝E, ＭＳ Ｐ明朝, ＭＳ 明朝, serif;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  font-weight: normal;
+}
 .services__price-list {
   width: 100%;
 }
@@ -577,6 +739,21 @@ textarea {
 }
 .services__price-title {
   font-weight: normal;
+}
+.services__note-list {
+  display: flex;
+}
+@media screen and (max-width: 768px) {
+  .services__note-list {
+    display: grid;
+    text-align: left;
+    grid-template-columns: 82px 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: column;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+    margin-top: 8px;
+  }
 }
 
 /*  ==============================

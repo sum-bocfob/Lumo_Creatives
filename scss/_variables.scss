@@ -134,8 +134,8 @@ $fontStyles: (
 $dur_def: 0.3s;
 
 // メディアクエリ
-@mixin media() {
-    @media screen and (max-width: 768px) {
+@mixin media($width: 768) {
+    @media screen and (max-width: #{$width}px) {
         @content;
     }
 }

@@ -71,8 +71,9 @@ $(function () {
     //Masonryの関数↓
     list.masonry({              //オプション指定箇所
         itemSelector: '.works__pic-item',   //コンテンツを指定
-        columnWidth: 205,           //カラム幅を設定
-        fitWidth: true,             //コンテンツ数に合わせ親の幅を自動調整
+        columnWidth: '.works__pic-item',           //カラム幅を設定
+        percentPosition: true,
+        gutter: ".gutter-sizer"
         // columnWidth: '.grid-sizer',
         // gutter: 8,
         // percentPosition: true
@@ -81,6 +82,7 @@ $(function () {
     // * Worksタブ切り替え
     const tab_btns = $(".works__cat-item");
     const lists = [$(".works__list--movie"),$(".works__list--pic"),$(".works__list--design")];
+    const view_more_movie_btn = $(".movie-btn-wrapper");
     lists.forEach((l, idx) => {
         if (idx !== 0) {
             l.hide();
@@ -97,10 +99,18 @@ $(function () {
         lists.forEach((l) => {
             l.slideUp("0.2s");
         })
-        setTimeout(function() {
+        setTimeout(function () {
             lists[tab_btns.index(btn)].slideDown("0.2s");
             btn.addClass("works__cat-item--active");
-        },400);
+
+        }, 400);
+
+        // Movieならもっと見るボタン表示
+        if (btn.hasClass("works__cat-item--movies")) {
+            view_more_movie_btn.fadeIn();
+        } else {
+            view_more_movie_btn.fadeOut();
+        }
     });
 
     // *ハンバーガーメニュー
@@ -116,6 +126,13 @@ $(function () {
         $(this).removeClass("js-open-menu");
         ham.removeClass("js-open-menu");
         header.removeClass("js-open-menu");
+    });
+
+    // *SP用Movieもっと見る
+    const movie_btn = $(".movie-btn");
+    movie_btn.on("click", function() {
+        $(".works__item--hideSP").slideToggle().css("display", "flex");
+        $(this).text($(this).text() === "もっと見る" ? "閉じる" : "もっと見る");
     });
 
     // *ナビゲーションアクティブ

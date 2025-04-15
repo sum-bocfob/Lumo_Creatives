@@ -162,7 +162,7 @@
                                 </video>
                             </div>
                         </li>
-                        <li class="works__item">
+                        <li class="works__item works__item--hideSP">
                             <h3 class="works__item-title">Movie1</h3>
                             <div class="works__video-wrapper">
                                 <video id="vid5" class="video-js" preload="none">
@@ -170,7 +170,7 @@
                                 </video>
                             </div>
                         </li>
-                        <li class="works__item">
+                        <li class="works__item works__item--hideSP">
                             <h3 class="works__item-title">Movie1</h3>
                             <div class="works__video-wrapper">
                                 <video id="vid6" class="video-js" preload="none">
@@ -178,7 +178,7 @@
                                 </video>
                             </div>
                         </li>
-                        <li class="works__item">
+                        <li class="works__item works__item--hideSP">
                             <h3 class="works__item-title">Movie1</h3>
                             <div class="works__video-wrapper">
                                 <video id="vid7" class="video-js" preload="none">
@@ -188,9 +188,14 @@
                         </li>
                     </ul>
 
+                    <!-- * SP用もっと見るボタン ======================== -->
+                    <div class="movie-btn-wrapper">
+                        <button type="button" class="btn movie-btn">もっと見る</button>
+                    </div>
+
                     <!-- * Picturesアイテム ======================== -->
                     <div class="works__list works__list--pic">
-                        <div class="grid-sizer"></div>
+                        <div class="gutter-sizer"></div>
                         <div class="works__pic-item">
                             <img src="img/thumb_movie.jpg" alt="" />
                         </div>
@@ -222,7 +227,6 @@
                             <img src="img/pic05.jpg" alt="" />
                         </div>
                     </div>
-                    <!-- /.works__pic-list -->
 
                     <!-- * Designsアイテム -->
                     <ul class="works__list works__list--design">
@@ -258,7 +262,7 @@
                         <li class="services__item">
                             <h3 class="services__title">Webサイト制作</h3>
                             <div class="services__contents">
-                                <p class="services__lead">シンプルで洗練されたデザインを、スマホにも最適化。</p>
+                                <p class="services__lead">シンプルで洗練されたデザインを、<span class="u-block-only-SP"></span> スマホにも最適化。</p>
                                 <dl class="services__price-list">
                                     <div class="services__price-wrapper">
                                         <dt class="services__price-title">ランディングページ（1ページ構成）</dt>
@@ -273,10 +277,15 @@
                                         <dd class="services__price">+¥30,000〜</dd>
                                     </div>
                                 </dl>
-                                <p class="services__limit">
-                                    納期目安：2〜4週間<br />
-                                    ヒアリング・構成案作成・レスポンシブ対応・SEO基本設定込み
-                                </p>
+                                <div class="">
+                                    <p class="services__limit">納期目安：2〜4週間</p>
+                                    <ul class="services__note-list">
+                                        <li><span class="u-inline-only-SP">・</span>ヒアリング</li>
+                                        <li>・構成案作成</li>
+                                        <li>・レスポンシブ対応</li>
+                                        <li>・SEO基本設定込み</li>
+                                    </ul>
+                                </div>
                             </div>
                         </li>
                         <li class="services__item">
@@ -312,10 +321,6 @@
                                         <dt class="services__price-title">映像編集（プロモ・SNS用）</dt>
                                         <dd class="services__price">¥60,000〜</dd>
                                     </div>
-                                    <div class="services__price-wrapper">
-                                        <dt class="services__price-title">WordPress実装対応</dt>
-                                        <dd class="services__price">+¥30,000〜</dd>
-                                    </div>
                                 </dl>
                                 <p class="services__limit">
                                     納期目安：1〜3週間<br />
@@ -334,10 +339,6 @@
                                     <div class="services__price-wrapper">
                                         <dt class="services__price-title">単発相談（60分）</dt>
                                         <dd class="services__price">¥10,000</dd>
-                                    </div>
-                                    <div class="services__price-wrapper">
-                                        <dt class="services__price-title">小規模サイト（3〜5ページ）</dt>
-                                        <dd class="services__price">¥150,000〜</dd>
                                     </div>
                                     <div class="services__price-wrapper">
                                         <dt class="services__price-title">継続サポート（月額）</dt>
@@ -363,15 +364,15 @@
                     <form action="#" method="post" class="form">
                         <div class="form__area-wrapper">
                             <div class="form__area">
-                                <input type="text" name="name" id="name" placeholder="お名前" />
+                                <input type="text" name="name" id="name" placeholder="お名前" required />
                                 <label for="name" class="form__label">お名前</label>
                             </div>
                             <div class="form__area">
-                                <input type="email" name="mail" id="mail" placeholder="メールアドレス" />
+                                <input type="email" name="mail" id="mail" placeholder="メールアドレス" required />
                                 <label for="mail" class="form__label">メールアドレス</label>
                             </div>
                             <div class="form__area">
-                                <textarea name="content" id="content" placeholder="お問い合わせ内容"></textarea>
+                                <textarea name="content" id="content" placeholder="お問い合わせ内容" required></textarea>
                                 <label for="content" class="form__label">お問い合わせ内容</label>
                             </div>
                         </div>

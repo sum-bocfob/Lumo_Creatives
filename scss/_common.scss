@@ -18,13 +18,22 @@
 
 .section {
     padding: 120px 0;
+    @include media {
+        padding: 64px 0;
+    }
 
     &--top {
         padding: 240px 0 120px;
+        @include media {
+            padding: 64px 0;
+        }
     }
 
     &.contact {
         padding: 240px 0;
+        @include media {
+            padding: 80px 0;
+        }
     }
 }
 
@@ -42,6 +51,9 @@
 
         .headingL__lead {
             text-align: right;
+            @include media {
+                text-align: center;
+            }
         }
     }
 }
@@ -50,15 +62,24 @@
     @include setFont($fs_headingL_PC);
     display: flex;
     align-items: center;
-    gap: 5.7%;
+    gap: 5%;
     width: 100%;
+    word-spacing: 0.5em;
+    @include media {
+        @include setFont($fs_headingL_SP);
+        gap: 0;
+        justify-content: center;
+    }
 
     &::after {
         content: "";
         display: block;
-        width: 65.71428571428572%;
+        width: 60%;
         height: 1px;
         background-image: $g_line;
+        @include media {
+            display: none;
+        }
     }
 
     &--rev {
@@ -74,6 +95,13 @@
         text-align: center;
         &::after {
             display: none;
+        }
+    }
+
+    &__lead {
+        @include media {
+            text-align: center;
+            margin: 0 auto;
         }
     }
 }
@@ -92,9 +120,11 @@
     box-shadow: 0 6px 0 0 $c_gray;
     transition-duration: $dur_def;
 
-    &:hover {
-        box-shadow: none;
-        translate: 0 6px;
+    @media (hover: hover) {
+        &:hover {
+            box-shadow: none;
+            translate: 0 6px;
+        }
     }
 }
 
@@ -103,4 +133,17 @@
 ============================== */
 .u-upper-case {
     text-transform: uppercase;
+}
+
+.u-block-only-SP {
+    @include media {
+        display: block;
+    }
+}
+
+.u-inline-only-SP {
+    display: none;
+    @include media {
+        display: inline;
+    }
 }
