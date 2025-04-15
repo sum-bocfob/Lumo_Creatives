@@ -302,10 +302,13 @@
     }
 
     .movie-btn-wrapper {
-        display: flex;
+        display: none;
         justify-content: center;
         margin-top: 32px;
         width: 100%;
+        @include media {
+            display: flex;
+        }
     }
 
     /*
@@ -579,7 +582,7 @@
             color: $c_gray;
             opacity: 0;
             padding: 0 8px;
-            background-image: url("../img/tex_bg.png");
+            background-image: url("/img/tex_bg.png");
         }
 
         &__btn-wrapper {
