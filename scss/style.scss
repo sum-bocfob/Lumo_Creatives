@@ -54,6 +54,7 @@
     max-width: 1440px;
     background-color: rgba(255, 255, 255, 0.7);
     transition-duration: $dur_def;
+    pointer-events: none;
 
     &.js-open-menu {
         background-color: transparent;
@@ -70,6 +71,7 @@
         display: flex;
         align-items: center;
         flex-shrink: 0;
+        pointer-events: all;
         &-link {
             transition-duration: $dur_def;
             display: flex;
@@ -100,6 +102,7 @@
 
     &__gnav {
         width: 100%;
+        pointer-events: all;
         &.js-open-menu {
             opacity: 1;
             pointer-events: all;
@@ -160,6 +163,7 @@
     height: 32px;
     z-index: 1500;
     display: none;
+    pointer-events: all;
 
     @include media(960) {
         display: block;

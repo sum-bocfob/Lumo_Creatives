@@ -1,7 +1,7 @@
 import "./style.css";
 
 // import Swiper JS
-import Swiper from "swiper";
+import Swiper from "swiper/bundle";
 // import Swiper styles
 import "swiper/css";
 
@@ -10,87 +10,73 @@ import imagesLoaded from "imagesloaded";
 import $ from "jquery";
 import Masonry from "masonry-layout";
 
-// jQueryのインスタンスにimagesLoadedを追加
-$.fn.imagesLoaded = function (...args) {
-    return imagesLoaded(this.get(), ...args);
-};
-
-// *Swiper
-const swiper = new Swiper(".swiper", {
-    loop: true,
-
-    // If we need pagination
-    pagination: {
-        el: ".swiper-pagination",
-    },
-
-    // Navigation arrows
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-});
-
-// *video-js
-videojs.options = {
-    preload: "none",
-    muted: true,
-    controls: true,
-    autoplay: false,
-    fluid: true,
-    poster: "img/thumb_movie.jpg",
-    languages: {
-        ja: {
-            Play: "再生",
-            Pause: "停止",
-            "Play Video": "再生",
-            Mute: "ミュート",
-            Unmute: "ミュート解除",
-            "Playback Rate": "再生速度",
-            "Picture-in-Picture": "ピクチャインピクチャ",
-            Fullscreen: "全画面表示",
-            "Non-Fullscreen": "通常表示",
-        },
-    }, // 日本語の言語対応
-    language: "ja", // 言語を日本語に設定
-};
-document.querySelectorAll(".video-js").forEach((e) => {
-    videojs(e, videojs.options);
-});
-
-// * Viewer.js
-const viewer = new Viewer(document.querySelector(".works__list--pic"), {
-    toolbar: {
-        zoomIn: 3,
-        zoomOut: 3,
-        oneToOne: 3,
-        reset: 3,
-        prev: 3,
-        play: {
-            show: 3,
-            size: "large",
-        },
-        next: 3,
-        rotateLeft: 0,
-        rotateRight: 0,
-        flipHorizontal: 0,
-        flipVertical: 0,
-    },
-});
-
 $(function () {
-    // *Masonry
-    var list = $(".works__list--pic"); //コンテナとなる要素を指定
+    // jQueryのインスタンスにimagesLoadedを追加
+    $.fn.imagesLoaded = function (...args) {
+        return imagesLoaded(this.get(), ...args);
+    };
 
-    $(".works__list--pic").imagesLoaded(function () {
-        // images have loaded
-        new Masonry(".works__list--pic", {
-            //オプション指定箇所
-            itemSelector: ".works__pic-item", //コンテンツを指定
-            columnWidth: ".works__pic-item", //カラム幅を設定
-            percentPosition: true,
-            gutter: ".gutter-sizer",
-        });
+    // *Swiper
+    const swiper = new Swiper(".swiper", {
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+            el: ".swiper-pagination",
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+    // *video-js
+    videojs.options = {
+        preload: "none",
+        muted: true,
+        controls: true,
+        autoplay: false,
+        fluid: true,
+        poster: "img/thumb_movie.jpg",
+        languages: {
+            ja: {
+                Play: "再生",
+                Pause: "停止",
+                "Play Video": "再生",
+                Mute: "ミュート",
+                Unmute: "ミュート解除",
+                "Playback Rate": "再生速度",
+                "Picture-in-Picture": "ピクチャインピクチャ",
+                Fullscreen: "全画面表示",
+                "Non-Fullscreen": "通常表示",
+            },
+        }, // 日本語の言語対応
+        language: "ja", // 言語を日本語に設定
+    };
+    document.querySelectorAll(".video-js").forEach((e) => {
+        videojs(e, videojs.options);
+    });
+
+    // * Viewer.js
+    const viewer = new Viewer(document.querySelector(".works__list--pic"), {
+        toolbar: {
+            zoomIn: 3,
+            zoomOut: 3,
+            oneToOne: 3,
+            reset: 3,
+            prev: 3,
+            play: {
+                show: 3,
+                size: "large",
+            },
+            next: 3,
+            rotateLeft: 0,
+            rotateRight: 0,
+            flipHorizontal: 0,
+            flipVertical: 0,
+        },
     });
 
     // * Worksタブ切り替え
@@ -111,18 +97,33 @@ $(function () {
         const btn = $(this);
 
         lists.forEach((l) => {
-            l.slideUp("0.2s");
+            l.hide();
         });
-        setTimeout(function () {
-            lists[tab_btns.index(btn)].slideDown("0.2s");
-            btn.addClass("works__cat-item--active");
-        }, 400);
+        lists[tab_btns.index(btn)].show();
+        btn.addClass("works__cat-item--active");
+
+        // *Masonry
+        var list = $(".works__list--pic"); //コンテナとなる要素を指定
+
+        $(".works__list--pic").imagesLoaded(function () {
+            // images have loaded
+            new Masonry(document.querySelector(".works__list--pic"), {
+                //オプション指定箇所
+                itemSelector: ".works__pic-item", //コンテンツを指定
+                columnWidth: ".works__pic-item", //カラム幅を設定
+                percentPosition: true,
+                gutter: ".gutter-sizer",
+            });
+        });
 
         // Movieならもっと見るボタン表示
         if (btn.hasClass("works__cat-item--movies")) {
-            view_more_movie_btn.fadeIn();
-        } else {
-            view_more_movie_btn.fadeOut();
+            if (window.matchMedia("(max-width: 768px)").matches) {
+                view_more_movie_btn.show();
+                console.log("tes");
+            } else {
+                view_more_movie_btn.hide();
+            }
         }
     });
 

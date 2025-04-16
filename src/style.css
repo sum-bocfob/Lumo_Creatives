@@ -305,6 +305,7 @@ textarea {
   max-width: 1440px;
   background-color: rgba(255, 255, 255, 0.7);
   transition-duration: 0.3s;
+  pointer-events: none;
 }
 .header.js-open-menu {
   background-color: transparent;
@@ -321,6 +322,7 @@ textarea {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  pointer-events: all;
 }
 .header__logo-link {
   transition-duration: 0.3s;
@@ -352,6 +354,7 @@ textarea {
 }
 .header__gnav {
   width: 100%;
+  pointer-events: all;
 }
 .header__gnav.js-open-menu {
   opacity: 1;
@@ -412,6 +415,7 @@ textarea {
   height: 32px;
   z-index: 1500;
   display: none;
+  pointer-events: all;
 }
 @media screen and (max-width: 960px) {
   .hamburger {

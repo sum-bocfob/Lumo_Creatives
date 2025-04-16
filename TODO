@@ -5,6 +5,7 @@ video.js
 swiper
 Masonry.js
 viewer.js
+imagesloaded
 font awesome
 
 
@@ -12,7 +13,7 @@ font awesome
 Todo:
   ☐ OGP画像
   ✔ headerスクロールで背景無くす @done(25-04-14 18:11)
-  ☐ 動画画像軽量化
+  ✔ 動画画像軽量化 @done(25-04-16 09:16)
   ✔ Masonry中央寄せ @done(25-04-15 09:34)
   ✔ スクロール系 @done(25-04-14 18:11)
   ✔ SP @done(25-04-15 09:34)
