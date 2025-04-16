@@ -8,6 +8,8 @@ import Masonry from "masonry-layout";
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
 
+import thumbMoviePoster from "./assets/img/thumb_movie.jpg";
+
 $(function () {
     // jQueryのインスタンスにimagesLoadedを追加
     $.fn.imagesLoaded = function (...args) {
@@ -38,7 +40,7 @@ $(function () {
             controls: true,
             autoplay: false,
             fluid: true,
-            poster: "src/assets/img/thumb_movie.jpg",
+            poster: thumbMoviePoster,
             languages: {
                 ja: {
                     Play: "再生",
@@ -214,10 +216,21 @@ $(function () {
     });
 
     $(window).on("load", function () {
+        // ローディング画面非表示
+        $("html, body").removeClass("no-scroll");
+        $("#loading").delay(400).fadeOut(800);
+
         // *ナビゲーションアクティブ
         PositionCheck();
         SetNavActive();
+
+        // video再生
+        // $(".swiper-slide video").get(0).play();
+        $(".swiper-slide video").each(function () {
+            $(this).get(0).play();
+        });
     });
+
     $(window).on("resize", function () {
         // *ナビゲーションアクティブ
         PositionCheck();

@@ -6,7 +6,7 @@ body {
   letter-spacing: 0.05em;
   font-weight: normal;
   color: #111111;
-  background-image: url("/img/tex_bg.png");
+  background-image: url("assets/img/tex_bg.png");
   background-repeat: repeat;
   background-size: 500px 500px;
   background-position: left top;
@@ -806,7 +806,7 @@ textarea {
   color: #9f9f9f;
   opacity: 0;
   padding: 0 8px;
-  background-image: url("/img/tex_bg.png");
+  background-image: url("assets/img/tex_bg.png");
 }
 .contact .form__btn-wrapper {
   display: flex;

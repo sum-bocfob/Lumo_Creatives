@@ -356,29 +356,6 @@
             }
         }
     }
-    // &__pic-item {
-    //     width: 16%;
-    //     margin-bottom: 8px;
-
-    //     img {
-    //         width: 100%;
-    //         filter: brightness(80%);
-    //         transition-duration: $dur_def;
-    //         cursor: pointer;
-
-    //         &:hover {
-    //             scale: 1.01;
-    //             opacity: 0.8;
-    //         }
-    //     }
-    // }
-    // .grid-sizer {
-    //     width: 16%;
-    // }
-
-    // .gutter-sizer {
-    //     width: 0%;
-    // }
 
     /*
     * Designs ============================== */
@@ -392,7 +369,6 @@
     &__design-item {
         text-align: center;
         transition-duration: $dur_def;
-        // overflow: hidden;
         position: relative;
 
         &::after {
@@ -586,7 +562,7 @@
             color: $c_gray;
             opacity: 0;
             padding: 0 8px;
-            background-image: url("/img/tex_bg.png");
+            background-image: url("assets/img/tex_bg.png");
         }
 
         &__btn-wrapper {

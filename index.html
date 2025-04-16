@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="no-scroll">
     <head>
         <meta charset="utf-8" />
         <title>Lumo Creatives</title>
@@ -44,20 +44,81 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
-        <link rel="stylesheet" href="css/style.css" />
+        <!-- <link rel="stylesheet" href="src/style.css" /> -->
 
         <script src="https://kit.fontawesome.com/224fa97e51.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script integrity="sha512-wRKVoAheoKSLKZwDa4SZdRizJAi6sC5UFB7oipnEgzPBBN1O7x7MtU+hP1lfKvuCAS8KMwX18ryUCRH/8DxQgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <style>
+            @keyframes loading {
+                0% {
+                    translate: 0 0;
+                }
+                5% {
+                    translate: 0 -1em;
+                }
+                10% {
+                    translate: 0 0;
+                }
+                100% {
+                    translate: 0 0;
+                }
+            }
+
+            #loading span {
+                animation-name: loading;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+
+            .no-scroll {
+                overflow: hidden;
+                height: 100vh;
+            }
+        </style>
     </head>
-    <body>
+    <body class="no-scroll">
+        <!-- * ======================== 
+        * ローディング
+        *======================== -->
+        <div
+            id="loading"
+            style="
+                position: fixed;
+                z-index: 99999;
+                width: 100vw;
+                height: 100vh;
+                background-color: #333;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-transform: uppercase;
+                letter-spacing: 1em;
+                font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            "
+        >
+            <span style="animation-delay: 0s">L</span>
+            <span style="animation-delay: 0.1s">o</span>
+            <span style="animation-delay: 0.2s">a</span>
+            <span style="animation-delay: 0.3s">d</span>
+            <span style="animation-delay: 0.4s">i</span>
+            <span style="animation-delay: 0.5s">n</span>
+            <span style="animation-delay: 0.6s">g</span>
+            <span style="animation-delay: 0.7s">.</span>
+            <span style="animation-delay: 0.8s">.</span>
+            <span style="animation-delay: 0.9s">.</span>
+        </div>
+
         <!-- * Hero動画 ======================== -->
         <!-- Slider main container -->
         <div class="swiper area">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide"><video src="src/assets/img/57392_640x360.mov" autoplay muted loop playsinline></video></div>
-                <div class="swiper-slide"><video src="src/assets/img/887_640x360.mov" autoplay muted loop playsinline></video></div>
-                <div class="swiper-slide"><video src="src/assets/img/52301_640x360.mp4" autoplay muted loop playsinline></video></div>
+                <div class="swiper-slide"><video src="src/assets/img/57392_640x360.mov" muted loop playsinline></video></div>
+                <div class="swiper-slide"><video src="src/assets/img/887_640x360.mov" muted loop playsinline></video></div>
+                <div class="swiper-slide"><video src="src/assets/img/52301_640x360.mp4" muted loop playsinline></video></div>
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
