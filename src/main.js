@@ -1,14 +1,12 @@
 import "./style.css";
-
-// import Swiper JS
 import Swiper from "swiper/bundle";
-// import Swiper styles
 import "swiper/css";
-
 import Viewer from "viewerjs";
 import imagesLoaded from "imagesloaded";
 import $ from "jquery";
 import Masonry from "masonry-layout";
+import videojs from "video.js";
+import "video.js/dist/video-js.css";
 
 $(function () {
     // jQueryのインスタンスにimagesLoadedを追加
@@ -33,30 +31,29 @@ $(function () {
     });
 
     // *video-js
-    videojs.options = {
-        preload: "none",
-        muted: true,
-        controls: true,
-        autoplay: false,
-        fluid: true,
-        poster: "img/thumb_movie.jpg",
-        languages: {
-            ja: {
-                Play: "再生",
-                Pause: "停止",
-                "Play Video": "再生",
-                Mute: "ミュート",
-                Unmute: "ミュート解除",
-                "Playback Rate": "再生速度",
-                "Picture-in-Picture": "ピクチャインピクチャ",
-                Fullscreen: "全画面表示",
-                "Non-Fullscreen": "通常表示",
-            },
-        }, // 日本語の言語対応
-        language: "ja", // 言語を日本語に設定
-    };
     document.querySelectorAll(".video-js").forEach((e) => {
-        videojs(e, videojs.options);
+        videojs(e, {
+            preload: "none",
+            muted: true,
+            controls: true,
+            autoplay: false,
+            fluid: true,
+            poster: "src/assets/img/thumb_movie.jpg",
+            languages: {
+                ja: {
+                    Play: "再生",
+                    Pause: "停止",
+                    "Play Video": "再生",
+                    Mute: "ミュート",
+                    Unmute: "ミュート解除",
+                    "Playback Rate": "再生速度",
+                    "Picture-in-Picture": "ピクチャインピクチャ",
+                    Fullscreen: "全画面表示",
+                    "Non-Fullscreen": "通常表示",
+                },
+            }, // 日本語の言語対応
+            language: "ja", // 言語を日本語に設定
+        });
     });
 
     // * Viewer.js
