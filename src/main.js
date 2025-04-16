@@ -116,10 +116,9 @@ $(function () {
         });
 
         // Movieならもっと見るボタン表示
-        if (btn.hasClass("works__cat-item--movies")) {
-            if (window.matchMedia("(max-width: 768px)").matches) {
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            if (btn.hasClass("works__cat-item--movies")) {
                 view_more_movie_btn.show();
-                console.log("tes");
             } else {
                 view_more_movie_btn.hide();
             }
